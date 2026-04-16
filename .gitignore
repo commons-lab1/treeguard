@@ -30,3 +30,4 @@ _autosave-*
 
 # Environment / secrets
 .env
+app/.DS_Store

@@ -39,13 +39,21 @@ Signs: erratic readings, LED flickering, visible condensation
 - Solar panel may need cleaning (dust, bird droppings)
 - Battery should stay healthy with solar harvest
 
+### Autumn
+- Good time to expand frame if tree grew significantly during the season
+- Clear fallen leaves piling against frame (traps moisture against trunk = rot risk)
+- Top up battery charge before shorter winter days reduce solar harvest
+- Check signage — replace if faded or peeling
+
 ### Winter
 - Trees are dormant, watering needs drop dramatically
-- Firmware reduces check frequency automatically below 5C
-- If hard freeze expected: 18650 cells perform poorly below -10C; consider retrieval in extreme climates
+- In extreme cold (<-10C sustained), 18650 cells lose capacity; consider retrieval in harsh climates or wrapping enclosure with insulation foam
 - Frame may accumulate ice — designed to handle it but inspect after thaw
+- The device will still alert when soil is dry, but watering dormant trees in frozen ground is ineffective — ignore dry alerts when ground is frozen
 
 ### Spring
 - Resume monthly checks
 - Expand frame if tree has grown significantly over winter
+- Clean solar panel — winter grime accumulates
 - Re-calibrate sensor if soil composition changed (mulch added, etc.)
+- Good time to deploy new units — saplings planted in spring need the most help through their first summer

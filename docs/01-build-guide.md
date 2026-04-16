@@ -34,14 +34,21 @@ TreeGuard has three build tiers. Start with the MVP.
 **Wiring:**
 ```
 ATtiny1614
-├── PA1 (pin 2)  ──── Soil sensor analog out
-├── PA4 (pin 5)  ──── 220R ──── Red LED ──── GND
-├── PA5 (pin 6)  ──── 220R ──── Green LED ── GND
-├── VCC ─────────────── Sensor VCC + Battery +
-└── GND ─────────────── Sensor GND + Battery -
+├── PA1 ──── Soil sensor analog out
+├── PA2 ──── DIP switch 1 (to GND when ON)
+├── PA3 ──── DIP switch 2 (to GND when ON)
+├── PA4 ──── 220R ──── Red LED ──── GND
+├── PA5 ──── 220R ──── Green LED ── GND
+├── PA6 ──── Sensor VCC (switched power)
+├── PA7 ──── DIP switch 3 (to GND when ON)
+├── PB3 ──── Self-test jumper (to GND = run self-test on boot)
+├── VCC ──── Battery +
+└── GND ──── Battery - / Sensor GND / LED cathodes / DIP common
 ```
 
-> **Note:** Power the sensor through a GPIO pin so firmware can cut power between readings (saves battery).
+> **Power saving:** The sensor is powered via PA6 so firmware can cut power between readings. This is critical for CR123A battery life.
+
+> **Self-test:** Jumper PB3 to GND before powering on to run the LED + sensor self-test sequence. Remove jumper for normal operation.
 
 ### Step 2: Conformal coating
 
@@ -49,7 +56,7 @@ Apply 2 coats of conformal coating (MG Chemicals 422B or equivalent) to the asse
 
 ### Step 3: Enclosure
 
-Print `mechanical/frame-3dprint/electronics-enclosure.stl` in PETG. Apply silicone bead in the gasket groove. Press-fit the PCB. Route sensor wire and LED wires through the cable gland holes.
+Export `electronics-enclosure.stl` from the OpenSCAD file (`openscad -o enclosure.stl -D 'part="enclosure"' treeguard-frame.scad`) and print in PETG. Apply silicone bead in the gasket groove. Press-fit the PCB. Route sensor wire and LED wires through the cable gland holes.
 
 ### Step 4: Frame assembly
 

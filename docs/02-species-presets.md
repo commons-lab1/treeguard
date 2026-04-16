@@ -27,9 +27,19 @@ Each preset defines:
 ## Setting the preset
 
 ### MVP (ATtiny version)
-Use the 3-position DIP switch on the PCB:
-- Switch pattern maps to preset ID (see silkscreen label)
-- Power cycle after changing
+Use the 3-bit DIP switch (3 switches = 8 positions, 6 used) on the PCB:
+
+| SW3 | SW2 | SW1 | Preset ID | Category |
+|-----|-----|-----|-----------|----------|
+| OFF | OFF | OFF | 0 | Default |
+| OFF | OFF | ON  | 1 | High water |
+| OFF | ON  | OFF | 2 | Moderate water |
+| OFF | ON  | ON  | 3 | Low water |
+| ON  | OFF | OFF | 4 | Fruit trees |
+| ON  | OFF | ON  | 5 | Mediterranean |
+| ON  | ON  | *   | 6-7 | Reserved (falls back to Default) |
+
+Power cycle after changing the DIP switch.
 
 ### V1 (ESP32 version)
 - Scan the QR code on the frame

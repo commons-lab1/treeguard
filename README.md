@@ -81,7 +81,7 @@ See [hardware/bom.csv](hardware/bom.csv) for full bill of materials.
 ```
 treeguard/
 ├── docs/                 Build guides, species presets, rationale
-├── hardware/             KiCad schematics, PCB, BOM
+├── hardware/             Wiring diagrams, PCB (planned), BOM
 ├── mechanical/           3D print files, PVC/plywood alternatives, signage
 ├── firmware/
 │   ├── treeguard-mini/   ATtiny offline MVP
@@ -95,6 +95,10 @@ treeguard/
 - **Hardware:** [CERN-OHL-S v2](LICENSE-HARDWARE)
 - **Software:** [MIT](LICENSE-SOFTWARE)
 - **Docs & Media:** [CC BY-SA 4.0](LICENSE-DOCS-MEDIA)
+
+## Roadmap
+
+See [ROADMAP.md](ROADMAP.md) for the full plan. Currently in **MVP phase** — building first 3 prototypes for field testing.
 
 ## Contributing
 
