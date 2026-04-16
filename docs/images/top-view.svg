@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <style>
+      .label { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; fill: #555; }
+      .title { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 16px; font-weight: bold; fill: #333; }
+      .dim { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 10px; fill: #888; }
+    </style>
+    <radialGradient id="soil-top" cx="50%" cy="50%">
+      <stop offset="0%" stop-color="#9E8B5E"/>
+      <stop offset="100%" stop-color="#7A6B3E"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Title -->
+  <text x="250" y="28" text-anchor="middle" class="title">TOP VIEW (looking down)</text>
+
+  <!-- Background -->
+  <rect x="40" y="40" width="420" height="420" rx="8" fill="#E8F5E9" stroke="#C8E6C9" stroke-width="1"/>
+
+  <!-- Soil circle hint -->
+  <circle cx="250" cy="260" r="160" fill="url(#soil-top)" opacity="0.15"/>
+
+  <!-- === TRIANGULAR FRAME === -->
+
+  <!-- Three spine positions at 120-degree intervals -->
+  <!-- Spine 1: top (south-facing, has solar + electronics) -->
+  <!-- Spine 2: bottom-left -->
+  <!-- Spine 3: bottom-right -->
+
+  <!-- Frame outer triangle (ring connection paths) -->
+  <!-- Ring level visualized as connected arcs -->
+
+  <!-- Outer ring (connecting spines) -->
+  <polygon points="250,130 145,325 355,325"
+           fill="none" stroke="#2E7D32" stroke-width="10" stroke-linejoin="round" opacity="0.8"/>
+
+  <!-- Inner ring (smaller) -->
+  <polygon points="250,160 165,305 335,305"
+           fill="none" stroke="#43A047" stroke-width="6" stroke-linejoin="round" opacity="0.6"/>
+
+  <!-- Ring mesh bars between spines -->
+  <!-- Top to bottom-left -->
+  <g stroke="#66BB6A" stroke-width="3" opacity="0.5">
+    <line x1="218" y1="185" x2="170" y2="270"/>
+    <line x1="198" y1="208" x2="155" y2="290"/>
+    <!-- Top to bottom-right -->
+    <line x1="282" y1="185" x2="330" y2="270"/>
+    <line x1="302" y1="208" x2="345" y2="290"/>
+    <!-- Bottom-left to bottom-right -->
+    <line x1="195" y1="325" x2="245" y2="325"/>
+    <line x1="255" y1="325" x2="305" y2="325"/>
+  </g>
+
+  <!-- Spine 1 (top - south facing) -->
+  <g transform="translate(250, 125)">
+    <rect x="-10" y="-10" width="20" height="20" rx="4" fill="#1B5E20" stroke="#0D3B0D" stroke-width="1.5"/>
+
+    <!-- Solar panel on top of this spine -->
+    <rect x="-25" y="-40" width="50" height="30" rx="3" fill="#1565C0" stroke="#0D47A1" stroke-width="1"/>
+    <!-- Solar grid -->
+    <g stroke="#1976D2" stroke-width="0.5">
+      <line x1="-12" y1="-39" x2="-12" y2="-11"/>
+      <line x1="0" y1="-39" x2="0" y2="-11"/>
+      <line x1="12" y1="-39" x2="12" y2="-11"/>
+      <line x1="-24" y1="-30" x2="24" y2="-30"/>
+      <line x1="-24" y1="-20" x2="24" y2="-20"/>
+    </g>
+
+    <!-- Electronics enclosure next to spine -->
+    <rect x="15" y="-18" width="40" height="28" rx="4" fill="#616161" stroke="#424242" stroke-width="1"/>
+    <!-- LEDs -->
+    <circle cx="27" cy="-8" r="3.5" fill="#FF1744" stroke="#D50000" stroke-width="0.8"/>
+    <circle cx="27" cy="-8" r="6" fill="#FF1744" opacity="0.15"/>
+    <circle cx="40" cy="-8" r="3.5" fill="#00E676" stroke="#00C853" stroke-width="0.8"/>
+  </g>
+
+  <!-- Spine 2 (bottom-left) -->
+  <g transform="translate(140, 330)">
+    <rect x="-10" y="-10" width="20" height="20" rx="4" fill="#1B5E20" stroke="#0D3B0D" stroke-width="1.5"/>
+  </g>
+
+  <!-- Spine 3 (bottom-right) -->
+  <g transform="translate(360, 330)">
+    <rect x="-10" y="-10" width="20" height="20" rx="4" fill="#1B5E20" stroke="#0D3B0D" stroke-width="1.5"/>
+  </g>
+
+  <!-- Ground stakes (visible as circles at spine bases) -->
+  <circle cx="250" cy="125" r="5" fill="#9E9E9E" stroke="#757575" stroke-width="1"/>
+  <circle cx="140" cy="330" r="5" fill="#9E9E9E" stroke="#757575" stroke-width="1"/>
+  <circle cx="360" cy="330" r="5" fill="#9E9E9E" stroke="#757575" stroke-width="1"/>
+
+  <!-- Tree trunk (center, cross-section) -->
+  <circle cx="250" cy="250" r="18" fill="#8B5E3C" stroke="#5C3317" stroke-width="2"/>
+  <!-- Tree rings -->
+  <circle cx="250" cy="250" r="13" fill="none" stroke="#7A4E30" stroke-width="0.5"/>
+  <circle cx="250" cy="250" r="8" fill="none" stroke="#7A4E30" stroke-width="0.5"/>
+  <circle cx="250" cy="250" r="4" fill="#9E7B5A"/>
+
+  <!-- Canopy shadow (dashed) -->
+  <circle cx="250" cy="245" r="70" fill="#4CAF50" opacity="0.1" stroke="#4CAF50" stroke-width="1" stroke-dasharray="5,5"/>
+
+  <!-- Sensor probe (underground, shown as dot) -->
+  <circle cx="285" cy="270" r="4" fill="#FFB74D" stroke="#F57C00" stroke-width="1"/>
+  <line x1="285" y1="274" x2="310" y2="310" stroke="#F57C00" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="312" y="315" class="label">Sensor probe</text>
+
+  <!-- Air gap annotation -->
+  <line x1="268" y1="250" x2="240" y2="130" stroke="#FF5722" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <g transform="translate(250, 200)">
+    <line x1="-15" y1="0" x2="15" y2="0" stroke="#FF5722" stroke-width="1"/>
+    <polygon points="-15,0 -10,-3 -10,3" fill="#FF5722"/>
+    <polygon points="15,0 10,-3 10,3" fill="#FF5722"/>
+    <text x="0" y="-5" text-anchor="middle" font-family="Arial" font-size="8" fill="#FF5722" font-weight="bold">AIR GAP</text>
+  </g>
+
+  <!-- === ANNOTATIONS === -->
+
+  <!-- Solar panel label -->
+  <line x1="275" y1="90" x2="380" y2="70" stroke="#888" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <text x="382" y="65" class="label">Solar panel</text>
+  <text x="382" y="77" class="label">(faces south)</text>
+
+  <!-- Enclosure label -->
+  <line x1="305" y1="115" x2="395" y2="105" stroke="#888" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <text x="397" y="100" class="label">Electronics +</text>
+  <text x="397" y="112" class="label">LEDs (outward)</text>
+
+  <!-- Spine label -->
+  <line x1="125" y1="330" x2="70" y2="370" stroke="#888" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <text x="55" y="375" class="label" text-anchor="end">Spine (x3)</text>
+  <text x="55" y="387" class="label" text-anchor="end">at 120 deg</text>
+
+  <!-- Trunk label -->
+  <line x1="250" y1="270" x2="250" y2="400" stroke="#888" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <text x="250" y="415" text-anchor="middle" class="label">Tree trunk</text>
+  <text x="250" y="427" text-anchor="middle" class="label">(centered, no contact)</text>
+
+  <!-- Dimension: inner diameter -->
+  <line x1="170" y1="440" x2="330" y2="440" stroke="#AAA" stroke-width="0.8"/>
+  <line x1="170" y1="435" x2="170" y2="445" stroke="#AAA" stroke-width="0.8"/>
+  <line x1="330" y1="435" x2="330" y2="445" stroke="#AAA" stroke-width="0.8"/>
+  <text x="250" y="455" text-anchor="middle" class="dim">~200 mm inner diameter</text>
+
+  <!-- 120-degree angle annotation -->
+  <path d="M250,260 L250,280 A25,25 0 0,1 228,272" fill="none" stroke="#888" stroke-width="0.8"/>
+  <text x="225" y="292" class="dim">120</text>
+</svg>

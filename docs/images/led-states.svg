@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 250" width="700" height="250">
+  <defs>
+    <style>
+      .state-title { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 16px; font-weight: bold; }
+      .state-desc { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; fill: #555; }
+      .state-action { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 12px; font-weight: bold; }
+    </style>
+    <radialGradient id="red-glow" cx="50%" cy="50%">
+      <stop offset="0%" stop-color="#FF1744" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#FF1744" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#FF1744" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="green-glow" cx="50%" cy="50%">
+      <stop offset="0%" stop-color="#00E676" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#00E676" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#00E676" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="amber-glow" cx="50%" cy="50%">
+      <stop offset="0%" stop-color="#FFB300" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#FFB300" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#FFB300" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="250" rx="10" fill="#1a1a1a"/>
+
+  <!-- === STATE 1: THIRSTY (red) === -->
+  <g transform="translate(120, 100)">
+    <!-- Glow -->
+    <circle r="55" fill="url(#red-glow)"/>
+    <!-- LED body -->
+    <circle r="20" fill="#FF1744" stroke="#D50000" stroke-width="2"/>
+    <!-- Highlight -->
+    <circle cx="-6" cy="-6" r="6" fill="white" opacity="0.3"/>
+    <!-- Pulse rings -->
+    <circle r="30" fill="none" stroke="#FF1744" stroke-width="1" opacity="0.4"/>
+    <circle r="42" fill="none" stroke="#FF1744" stroke-width="0.5" opacity="0.2"/>
+  </g>
+  <text x="120" y="178" text-anchor="middle" class="state-title" fill="#FF1744">THIRSTY</text>
+  <text x="120" y="196" text-anchor="middle" class="state-desc" fill="#BDBDBD">Soil dry for 6+ hours</text>
+  <text x="120" y="214" text-anchor="middle" class="state-desc" fill="#BDBDBD">Slow red pulse (3s on / 27s off)</text>
+  <text x="120" y="236" text-anchor="middle" class="state-action" fill="#FF8A80">Please water ~1 liter</text>
+
+  <!-- Arrow -->
+  <line x1="210" y1="100" x2="250" y2="100" stroke="#666" stroke-width="2"/>
+  <polygon points="250,95 260,100 250,105" fill="#666"/>
+  <text x="235" y="85" text-anchor="middle" font-family="Arial" font-size="8" fill="#888">watered</text>
+
+  <!-- === STATE 2: HAPPY (green) === -->
+  <g transform="translate(350, 100)">
+    <!-- Glow -->
+    <circle r="55" fill="url(#green-glow)"/>
+    <!-- LED body -->
+    <circle r="20" fill="#00E676" stroke="#00C853" stroke-width="2"/>
+    <!-- Highlight -->
+    <circle cx="-6" cy="-6" r="6" fill="white" opacity="0.3"/>
+  </g>
+  <text x="350" y="178" text-anchor="middle" class="state-title" fill="#00E676">HAPPY</text>
+  <text x="350" y="196" text-anchor="middle" class="state-desc" fill="#BDBDBD">Just watered (moisture jump detected)</text>
+  <text x="350" y="214" text-anchor="middle" class="state-desc" fill="#BDBDBD">Green glow for ~2 hours</text>
+  <text x="350" y="236" text-anchor="middle" class="state-action" fill="#69F0AE">No action needed, thank you!</text>
+
+  <!-- Arrow to SICK -->
+  <line x1="440" y1="100" x2="480" y2="100" stroke="#666" stroke-width="2"/>
+  <polygon points="480,95 490,100 480,105" fill="#666"/>
+  <text x="465" y="85" text-anchor="middle" font-family="Arial" font-size="8" fill="#888">fault</text>
+
+  <!-- === STATE 3: SICK (amber) === -->
+  <g transform="translate(580, 100)">
+    <!-- Glow -->
+    <circle r="55" fill="url(#amber-glow)"/>
+    <!-- LED body -->
+    <circle r="20" fill="#FFB300" stroke="#FF8F00" stroke-width="2"/>
+    <!-- Highlight -->
+    <circle cx="-6" cy="-6" r="6" fill="white" opacity="0.3"/>
+    <!-- Double-blink hint -->
+    <circle r="28" fill="none" stroke="#FFB300" stroke-width="1.5" opacity="0.4" stroke-dasharray="8,8"/>
+  </g>
+  <text x="580" y="178" text-anchor="middle" class="state-title" fill="#FFB300">SICK</text>
+  <text x="580" y="196" text-anchor="middle" class="state-desc" fill="#BDBDBD">Low battery or sensor fault</text>
+  <text x="580" y="214" text-anchor="middle" class="state-desc" fill="#BDBDBD">Amber double-blink every 5s</text>
+  <text x="580" y="236" text-anchor="middle" class="state-action" fill="#FFE082">Needs maintainer attention</text>
+
+  <!-- Night suppression note -->
+  <rect x="200" y="12" width="300" height="24" rx="4" fill="#333" stroke="#555" stroke-width="0.5"/>
+  <text x="350" y="28" text-anchor="middle" font-family="Arial" font-size="10" fill="#999">
+    All LEDs suppressed 21:00 - sunrise (wildlife safety)
+  </text>
+</svg>

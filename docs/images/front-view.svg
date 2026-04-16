@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" width="500" height="700">
+  <defs>
+    <style>
+      .label { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; fill: #555; }
+      .title { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 16px; font-weight: bold; fill: #333; }
+      .dim { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 10px; fill: #888; }
+    </style>
+    <linearGradient id="soil" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8B6914"/>
+      <stop offset="100%" stop-color="#5C4A1E"/>
+    </linearGradient>
+    <linearGradient id="trunk" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6B4226"/>
+      <stop offset="40%" stop-color="#8B5E3C"/>
+      <stop offset="100%" stop-color="#5C3317"/>
+    </linearGradient>
+    <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4CAF50"/>
+      <stop offset="100%" stop-color="#2E7D32"/>
+    </linearGradient>
+    <linearGradient id="spine-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2E7D32"/>
+      <stop offset="100%" stop-color="#1B5E20"/>
+    </linearGradient>
+    <linearGradient id="ring-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#43A047"/>
+      <stop offset="100%" stop-color="#2E7D32"/>
+    </linearGradient>
+    <linearGradient id="solar-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1565C0"/>
+      <stop offset="100%" stop-color="#0D47A1"/>
+    </linearGradient>
+    <linearGradient id="enclosure-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#757575"/>
+      <stop offset="100%" stop-color="#424242"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Title -->
+  <text x="250" y="28" text-anchor="middle" class="title">FRONT VIEW</text>
+
+  <!-- Sky background -->
+  <rect x="50" y="40" width="400" height="620" rx="8" fill="#E8F5E9" stroke="#C8E6C9" stroke-width="1"/>
+
+  <!-- Ground / soil -->
+  <rect x="50" y="480" width="400" height="180" rx="0 0 8 8" fill="url(#soil)"/>
+  <path d="M50,480 Q150,472 250,480 Q350,488 450,480" fill="none" stroke="#7A5B1E" stroke-width="2"/>
+
+  <!-- Grass tufts -->
+  <g stroke="#4CAF50" stroke-width="1.5" fill="none">
+    <path d="M80,480 Q82,468 85,480"/>
+    <path d="M83,480 Q87,465 90,480"/>
+    <path d="M150,480 Q153,470 156,480"/>
+    <path d="M340,480 Q343,466 347,480"/>
+    <path d="M345,480 Q349,470 352,480"/>
+    <path d="M420,480 Q422,472 425,480"/>
+  </g>
+
+  <!-- Underground sensor probe -->
+  <rect x="305" y="480" width="6" height="120" rx="3" fill="#66BB6A" opacity="0.6"/>
+  <rect x="303" y="590" width="10" height="20" rx="3" fill="#FFB74D" stroke="#F57C00" stroke-width="1"/>
+  <line x1="308" y1="610" x2="308" y2="625" stroke="#F57C00" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <!-- Ground stakes (visible underground) -->
+  <g opacity="0.5">
+    <rect x="163" y="480" width="4" height="80" fill="#9E9E9E"/>
+    <polygon points="163,560 167,560 165,575" fill="#9E9E9E"/>
+    <rect x="333" y="480" width="4" height="80" fill="#9E9E9E"/>
+    <polygon points="333,560 337,560 335,575" fill="#9E9E9E"/>
+  </g>
+
+  <!-- Tree trunk -->
+  <rect x="237" y="300" width="26" height="190" rx="4" fill="url(#trunk)"/>
+  <!-- Trunk texture -->
+  <g stroke="#5C3317" stroke-width="0.5" opacity="0.4">
+    <line x1="242" y1="320" x2="242" y2="340"/>
+    <line x1="255" y1="350" x2="255" y2="380"/>
+    <line x1="248" y1="400" x2="248" y2="430"/>
+    <line x1="240" y1="440" x2="240" y2="470"/>
+  </g>
+
+  <!-- Root flare hint -->
+  <ellipse cx="250" cy="485" rx="30" ry="8" fill="#6B4226" opacity="0.5"/>
+
+  <!-- Tree canopy (young sapling - sparse) -->
+  <g fill="url(#leaf)">
+    <!-- Main branch cluster -->
+    <ellipse cx="250" cy="250" rx="55" ry="65"/>
+    <!-- Side branches -->
+    <ellipse cx="210" cy="290" rx="30" ry="35" transform="rotate(-15,210,290)"/>
+    <ellipse cx="290" cy="280" rx="28" ry="32" transform="rotate(12,290,280)"/>
+    <!-- Top -->
+    <ellipse cx="255" cy="195" rx="25" ry="30"/>
+  </g>
+  <!-- Leaf highlights -->
+  <g fill="#66BB6A" opacity="0.4">
+    <ellipse cx="235" cy="240" rx="20" ry="25"/>
+    <ellipse cx="270" cy="210" rx="15" ry="20"/>
+  </g>
+
+  <!-- === TREEGUARD FRAME === -->
+
+  <!-- Left spine -->
+  <rect x="160" y="210" width="12" height="280" rx="3" fill="url(#spine-grad)"/>
+  <!-- Right spine -->
+  <rect x="328" y="210" width="12" height="280" rx="3" fill="url(#spine-grad)"/>
+
+  <!-- Ring level 1 (bottom) -->
+  <rect x="160" y="430" width="180" height="8" rx="4" fill="url(#ring-grad)" opacity="0.9"/>
+  <!-- Ring openings (cutouts suggested) -->
+  <g fill="#E8F5E9" opacity="0.5">
+    <rect x="185" y="431" width="30" height="6" rx="2"/>
+    <rect x="225" y="431" width="30" height="6" rx="2"/>
+    <rect x="265" y="431" width="30" height="6" rx="2"/>
+    <rect x="305" y="431" width="25" height="6" rx="2"/>
+  </g>
+
+  <!-- Ring level 2 (middle) -->
+  <rect x="160" y="360" width="180" height="8" rx="4" fill="url(#ring-grad)" opacity="0.9"/>
+  <g fill="#E8F5E9" opacity="0.5">
+    <rect x="185" y="361" width="30" height="6" rx="2"/>
+    <rect x="225" y="361" width="30" height="6" rx="2"/>
+    <rect x="265" y="361" width="30" height="6" rx="2"/>
+    <rect x="305" y="361" width="25" height="6" rx="2"/>
+  </g>
+
+  <!-- Ring level 3 (top) -->
+  <rect x="160" y="280" width="180" height="8" rx="4" fill="url(#ring-grad)" opacity="0.9"/>
+  <g fill="#E8F5E9" opacity="0.5">
+    <rect x="185" y="281" width="30" height="6" rx="2"/>
+    <rect x="225" y="281" width="30" height="6" rx="2"/>
+    <rect x="265" y="281" width="30" height="6" rx="2"/>
+    <rect x="305" y="281" width="25" height="6" rx="2"/>
+  </g>
+
+  <!-- Electronics enclosure (on right spine) -->
+  <rect x="340" y="330" width="45" height="30" rx="5" fill="url(#enclosure-grad)" stroke="#616161" stroke-width="1"/>
+  <!-- Enclosure detail -->
+  <rect x="345" y="335" width="35" height="20" rx="3" fill="#616161" opacity="0.5"/>
+
+  <!-- RED LED (thirsty indicator) -->
+  <circle cx="350" cy="338" r="4" fill="#FF1744" stroke="#D50000" stroke-width="1"/>
+  <!-- LED glow effect -->
+  <circle cx="350" cy="338" r="8" fill="#FF1744" opacity="0.2"/>
+  <circle cx="350" cy="338" r="12" fill="#FF1744" opacity="0.1"/>
+
+  <!-- GREEN LED -->
+  <circle cx="365" cy="338" r="4" fill="#00E676" stroke="#00C853" stroke-width="1"/>
+
+  <!-- Solar panel (on top of right spine) -->
+  <g transform="translate(328, 200) rotate(-20)">
+    <rect x="0" y="0" width="45" height="35" rx="2" fill="url(#solar-grad)" stroke="#0D47A1" stroke-width="1"/>
+    <!-- Solar cell grid -->
+    <g stroke="#1976D2" stroke-width="0.5">
+      <line x1="11" y1="1" x2="11" y2="34"/>
+      <line x1="22" y1="1" x2="22" y2="34"/>
+      <line x1="33" y1="1" x2="33" y2="34"/>
+      <line x1="1" y1="9" x2="44" y2="9"/>
+      <line x1="1" y1="18" x2="44" y2="18"/>
+      <line x1="1" y1="27" x2="44" y2="27"/>
+    </g>
+  </g>
+
+  <!-- QR code sticker on frame -->
+  <rect x="160" y="370" width="22" height="22" rx="2" fill="white" stroke="#999" stroke-width="0.5"/>
+  <g fill="#333">
+    <rect x="163" y="373" width="3" height="3"/>
+    <rect x="167" y="373" width="2" height="2"/>
+    <rect x="173" y="373" width="3" height="3"/>
+    <rect x="163" y="377" width="2" height="2"/>
+    <rect x="170" y="377" width="2" height="2"/>
+    <rect x="163" y="383" width="3" height="3"/>
+    <rect x="170" y="381" width="3" height="3"/>
+    <rect x="175" y="377" width="1" height="1"/>
+  </g>
+
+  <!-- Signage sticker -->
+  <rect x="175" y="395" width="40" height="25" rx="2" fill="#f0f7e6" stroke="#3a7a3a" stroke-width="0.5"/>
+  <text x="195" y="405" text-anchor="middle" font-family="Arial" font-size="4" fill="#1a5c1a" font-weight="bold">TreeGuard</text>
+  <text x="195" y="412" text-anchor="middle" font-family="Arial" font-size="3" fill="#cc0000" font-weight="bold">WATER ONLY</text>
+  <text x="195" y="417" text-anchor="middle" font-family="Arial" font-size="3" fill="#333">~1L max</text>
+
+  <!-- === ANNOTATIONS === -->
+
+  <!-- Solar panel label -->
+  <line x1="370" y1="195" x2="420" y2="120" stroke="#888" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <text x="422" y="118" class="label">Solar panel 5V</text>
+  <text x="422" y="130" class="label">(tilted south)</text>
+
+  <!-- LED label -->
+  <line x1="385" y1="340" x2="430" y2="310" stroke="#888" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <text x="432" y="305" class="label">Red/Green LEDs</text>
+  <text x="432" y="317" class="label">(status signal)</text>
+
+  <!-- Enclosure label -->
+  <line x1="385" y1="355" x2="430" y2="370" stroke="#888" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <text x="432" y="368" class="label">Electronics</text>
+  <text x="432" y="380" class="label">enclosure (sealed)</text>
+
+  <!-- Spine label -->
+  <line x1="155" y1="250" x2="95" y2="230" stroke="#888" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <text x="58" y="225" class="label">PETG spine</text>
+  <text x="58" y="237" class="label">(x3, 120deg)</text>
+
+  <!-- Ring label -->
+  <line x1="155" y1="365" x2="80" y2="365" stroke="#888" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <text x="55" y="358" class="label" text-anchor="end">Hex ring</text>
+  <text x="55" y="370" class="label" text-anchor="end">segments</text>
+  <text x="55" y="382" class="label" text-anchor="end">(x3 levels)</text>
+
+  <!-- Sensor label -->
+  <line x1="313" y1="600" x2="370" y2="590" stroke="#888" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <text x="372" y="585" class="label">Capacitive soil</text>
+  <text x="372" y="597" class="label">sensor (20-30cm</text>
+  <text x="372" y="609" class="label">underground)</text>
+
+  <!-- Stake label -->
+  <line x1="160" y1="520" x2="100" y2="530" stroke="#888" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <text x="55" y="525" class="label" text-anchor="end">Ground</text>
+  <text x="55" y="537" class="label" text-anchor="end">stakes (x3)</text>
+
+  <!-- QR label -->
+  <line x1="160" y1="380" x2="100" y2="420" stroke="#888" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <text x="55" y="418" class="label" text-anchor="end">QR code</text>
+  <text x="55" y="430" class="label" text-anchor="end">(tree info)</text>
+
+  <!-- Dimension: height -->
+  <line x1="135" y1="210" x2="135" y2="480" stroke="#AAA" stroke-width="0.5"/>
+  <line x1="130" y1="210" x2="140" y2="210" stroke="#AAA" stroke-width="0.5"/>
+  <line x1="130" y1="480" x2="140" y2="480" stroke="#AAA" stroke-width="0.5"/>
+  <text x="133" y="350" text-anchor="middle" class="dim" transform="rotate(-90,133,350)">700 mm</text>
+
+  <!-- Dimension: width -->
+  <line x1="160" y1="500" x2="340" y2="500" stroke="#AAA" stroke-width="0.5"/>
+  <line x1="160" y1="496" x2="160" y2="504" stroke="#AAA" stroke-width="0.5"/>
+  <line x1="340" y1="496" x2="340" y2="504" stroke="#AAA" stroke-width="0.5"/>
+  <text x="250" y="512" text-anchor="middle" class="dim">~200 mm inner</text>
+
+  <!-- No-contact warning -->
+  <g transform="translate(230, 450)">
+    <line x1="0" y1="0" x2="20" y2="-15" stroke="#FF5722" stroke-width="1" stroke-dasharray="2,2"/>
+    <text x="22" y="-18" font-family="Arial" font-size="8" fill="#FF5722" font-weight="bold">NO TRUNK</text>
+    <text x="22" y="-10" font-family="Arial" font-size="8" fill="#FF5722" font-weight="bold">CONTACT</text>
+  </g>
+</svg>

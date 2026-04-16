@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900">
+  <defs>
+    <style>
+      .label { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; fill: #555; }
+      .title { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 16px; font-weight: bold; fill: #333; }
+      .part-label { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 12px; font-weight: bold; fill: #1B5E20; }
+      .qty { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 10px; fill: #888; }
+    </style>
+  </defs>
+
+  <!-- Title -->
+  <text x="300" y="28" text-anchor="middle" class="title">EXPLODED VIEW — ALL COMPONENTS</text>
+
+  <!-- Background -->
+  <rect x="30" y="40" width="540" height="840" rx="8" fill="#FAFAFA" stroke="#E0E0E0" stroke-width="1"/>
+
+  <!-- === 1. SOLAR PANEL (top) === -->
+  <g transform="translate(300, 80)">
+    <!-- Panel -->
+    <rect x="-35" y="-20" width="70" height="45" rx="3" fill="#1565C0" stroke="#0D47A1" stroke-width="1.5"/>
+    <g stroke="#1976D2" stroke-width="0.5">
+      <line x1="-17" y1="-19" x2="-17" y2="24"/>
+      <line x1="0" y1="-19" x2="0" y2="24"/>
+      <line x1="17" y1="-19" x2="17" y2="24"/>
+      <line x1="-34" y1="-5" x2="34" y2="-5"/>
+      <line x1="-34" y1="10" x2="34" y2="10"/>
+    </g>
+    <!-- Wire -->
+    <line x1="0" y1="25" x2="0" y2="45" stroke="#F57C00" stroke-width="1.5" stroke-dasharray="3,2"/>
+  </g>
+  <text x="420" y="78" class="part-label">Solar Panel</text>
+  <text x="420" y="92" class="label">5V 0.5-1W epoxy</text>
+  <text x="420" y="104" class="qty">qty: 1</text>
+  <line x1="365" y1="85" x2="418" y2="85" stroke="#CCC" stroke-width="0.5"/>
+
+  <!-- Explode gap arrow -->
+  <line x1="300" y1="128" x2="300" y2="148" stroke="#BBB" stroke-width="1" stroke-dasharray="3,3"/>
+  <polygon points="295,148 305,148 300,155" fill="#BBB"/>
+
+  <!-- === 2. SOLAR TILT MOUNT === -->
+  <g transform="translate(300, 175)">
+    <polygon points="-20,-10 20,-10 25,8 -25,8" fill="#9E9E9E" stroke="#757575" stroke-width="1"/>
+    <polygon points="-15,-8 -25,8 -20,8" fill="#BDBDBD"/>
+    <rect x="-8" y="8" width="16" height="8" rx="2" fill="#757575"/>
+  </g>
+  <text x="420" y="170" class="part-label">Tilt Mount</text>
+  <text x="420" y="184" class="label">30 deg bracket (PETG)</text>
+  <text x="420" y="196" class="qty">qty: 1 (V1 only)</text>
+  <line x1="325" y1="178" x2="418" y2="178" stroke="#CCC" stroke-width="0.5"/>
+
+  <line x1="300" y1="195" x2="300" y2="215" stroke="#BBB" stroke-width="1" stroke-dasharray="3,3"/>
+  <polygon points="295,215 305,215 300,222" fill="#BBB"/>
+
+  <!-- === 3. VERTICAL SPINES === -->
+  <g transform="translate(300, 280)">
+    <!-- Three spines spread out -->
+    <rect x="-100" y="-45" width="14" height="90" rx="4" fill="#1B5E20" stroke="#0D3B0D" stroke-width="1"/>
+    <rect x="-7" y="-45" width="14" height="90" rx="4" fill="#2E7D32" stroke="#1B5E20" stroke-width="1"/>
+    <rect x="86" y="-45" width="14" height="90" rx="4" fill="#388E3C" stroke="#2E7D32" stroke-width="1"/>
+    <!-- Mounting holes -->
+    <g fill="white" opacity="0.5">
+      <circle cx="-93" cy="-20" r="2.5"/>
+      <circle cx="-93" cy="10" r="2.5"/>
+      <circle cx="-93" cy="35" r="2.5"/>
+      <circle cx="0" cy="-20" r="2.5"/>
+      <circle cx="0" cy="10" r="2.5"/>
+      <circle cx="0" cy="35" r="2.5"/>
+      <circle cx="93" cy="-20" r="2.5"/>
+      <circle cx="93" cy="10" r="2.5"/>
+      <circle cx="93" cy="35" r="2.5"/>
+    </g>
+  </g>
+  <text x="80" y="260" class="part-label" text-anchor="end">Vertical Spines</text>
+  <text x="80" y="274" class="label" text-anchor="end">PETG, 700mm tall</text>
+  <text x="80" y="286" class="qty" text-anchor="end">qty: 3 (at 120 deg)</text>
+  <line x1="82" y1="270" x2="192" y2="270" stroke="#CCC" stroke-width="0.5"/>
+
+  <line x1="300" y1="335" x2="300" y2="355" stroke="#BBB" stroke-width="1" stroke-dasharray="3,3"/>
+  <polygon points="295,355 305,355 300,362" fill="#BBB"/>
+
+  <!-- === 4. HEX RING SEGMENTS === -->
+  <g transform="translate(300, 400)">
+    <!-- Three ring segments shown as arcs -->
+    <g transform="translate(-100, 0)">
+      <path d="M-30,-4 L30,-4 L30,4 L-30,4 Z" fill="#43A047" stroke="#2E7D32" stroke-width="1" rx="3"/>
+      <!-- Openings -->
+      <rect x="-22" y="-2" width="12" height="4" rx="1" fill="#FAFAFA" opacity="0.5"/>
+      <rect x="-2" y="-2" width="12" height="4" rx="1" fill="#FAFAFA" opacity="0.5"/>
+      <rect x="14" y="-2" width="12" height="4" rx="1" fill="#FAFAFA" opacity="0.5"/>
+    </g>
+    <g transform="translate(0, 0)">
+      <path d="M-30,-4 L30,-4 L30,4 L-30,4 Z" fill="#43A047" stroke="#2E7D32" stroke-width="1" rx="3"/>
+      <rect x="-22" y="-2" width="12" height="4" rx="1" fill="#FAFAFA" opacity="0.5"/>
+      <rect x="-2" y="-2" width="12" height="4" rx="1" fill="#FAFAFA" opacity="0.5"/>
+      <rect x="14" y="-2" width="12" height="4" rx="1" fill="#FAFAFA" opacity="0.5"/>
+    </g>
+    <g transform="translate(100, 0)">
+      <path d="M-30,-4 L30,-4 L30,4 L-30,4 Z" fill="#43A047" stroke="#2E7D32" stroke-width="1" rx="3"/>
+      <rect x="-22" y="-2" width="12" height="4" rx="1" fill="#FAFAFA" opacity="0.5"/>
+      <rect x="-2" y="-2" width="12" height="4" rx="1" fill="#FAFAFA" opacity="0.5"/>
+      <rect x="14" y="-2" width="12" height="4" rx="1" fill="#FAFAFA" opacity="0.5"/>
+    </g>
+    <!-- x3 levels notation -->
+    <text x="155" y="-15" class="dim">x3 levels</text>
+    <line x1="148" y1="-20" x2="148" y2="20" stroke="#CCC" stroke-width="0.5"/>
+    <text x="155" y="5" class="dim">= 9 total</text>
+  </g>
+  <text x="80" y="390" class="part-label" text-anchor="end">Ring Segments</text>
+  <text x="80" y="404" class="label" text-anchor="end">PETG, with openings</text>
+  <text x="80" y="416" class="qty" text-anchor="end">qty: 9 (3 per level x 3)</text>
+  <line x1="82" y1="400" x2="162" y2="400" stroke="#CCC" stroke-width="0.5"/>
+
+  <line x1="300" y1="420" x2="300" y2="440" stroke="#BBB" stroke-width="1" stroke-dasharray="3,3"/>
+  <polygon points="295,440 305,440 300,447" fill="#BBB"/>
+
+  <!-- === 5. ELECTRONICS ENCLOSURE === -->
+  <g transform="translate(300, 490)">
+    <!-- Box body -->
+    <rect x="-35" y="-20" width="70" height="40" rx="6" fill="#616161" stroke="#424242" stroke-width="1.5"/>
+    <!-- Inner cavity visible -->
+    <rect x="-28" y="-14" width="56" height="28" rx="3" fill="#757575" opacity="0.4"/>
+
+    <!-- PCB inside -->
+    <rect x="-22" y="-10" width="44" height="20" rx="2" fill="#1B5E20" opacity="0.6"/>
+    <!-- Components on PCB -->
+    <rect x="-18" y="-6" width="10" height="8" rx="1" fill="#333" opacity="0.5"/> <!-- MCU -->
+    <rect x="4" y="-6" width="14" height="10" rx="1" fill="#1565C0" opacity="0.4"/> <!-- TP4056 -->
+
+    <!-- LEDs on face -->
+    <circle cx="-15" cy="-20" r="4" fill="#FF1744" stroke="#D50000" stroke-width="1"/>
+    <circle cx="0" cy="-20" r="4" fill="#00E676" stroke="#00C853" stroke-width="1"/>
+
+    <!-- Cable gland holes -->
+    <circle cx="-20" cy="20" r="3" fill="#424242"/>
+    <circle cx="0" cy="20" r="3" fill="#424242"/>
+    <circle cx="20" cy="20" r="3" fill="#424242"/>
+
+    <!-- Spine clip on back -->
+    <rect x="-10" y="-25" width="20" height="8" rx="2" fill="#757575" stroke="#616161" stroke-width="0.5"/>
+  </g>
+  <text x="420" y="478" class="part-label">Electronics Module</text>
+  <text x="420" y="492" class="label">MCU + charge controller</text>
+  <text x="420" y="504" class="label">+ battery + LEDs</text>
+  <text x="420" y="516" class="qty">qty: 1 (clips onto spine)</text>
+  <line x1="365" y1="495" x2="418" y2="495" stroke="#CCC" stroke-width="0.5"/>
+
+  <line x1="300" y1="520" x2="300" y2="540" stroke="#BBB" stroke-width="1" stroke-dasharray="3,3"/>
+  <polygon points="295,540 305,540 300,547" fill="#BBB"/>
+
+  <!-- === 6. 18650 BATTERY === -->
+  <g transform="translate(300, 570)">
+    <rect x="-28" y="-9" width="56" height="18" rx="9" fill="#4CAF50" stroke="#388E3C" stroke-width="1"/>
+    <!-- Positive terminal -->
+    <circle cx="29" cy="0" r="4" fill="#BDBDBD" stroke="#9E9E9E" stroke-width="0.5"/>
+    <!-- Label -->
+    <text x="0" y="4" text-anchor="middle" font-family="Arial" font-size="7" fill="white" font-weight="bold">18650</text>
+  </g>
+  <text x="420" y="565" class="part-label">Battery</text>
+  <text x="420" y="579" class="label">18650 Li-ion (reused)</text>
+  <text x="420" y="591" class="qty">qty: 1 — or CR123A for MVP</text>
+  <line x1="330" y1="575" x2="418" y2="575" stroke="#CCC" stroke-width="0.5"/>
+
+  <line x1="300" y1="590" x2="300" y2="610" stroke="#BBB" stroke-width="1" stroke-dasharray="3,3"/>
+  <polygon points="295,610 305,610 300,617" fill="#BBB"/>
+
+  <!-- === 7. SENSOR PROBE === -->
+  <g transform="translate(300, 660)">
+    <!-- Probe body -->
+    <rect x="-5" y="-30" width="10" height="60" rx="4" fill="#66BB6A" stroke="#43A047" stroke-width="1"/>
+    <!-- Sensing area -->
+    <rect x="-4" y="10" width="8" height="18" rx="3" fill="#FFB74D" stroke="#F57C00" stroke-width="1"/>
+    <!-- Wire -->
+    <line x1="0" y1="-30" x2="0" y2="-45" stroke="#F57C00" stroke-width="1.5" stroke-dasharray="3,2"/>
+    <!-- Connector -->
+    <rect x="-6" y="-50" width="12" height="8" rx="2" fill="white" stroke="#999" stroke-width="0.5"/>
+  </g>
+  <text x="80" y="650" class="part-label" text-anchor="end">Soil Sensor</text>
+  <text x="80" y="664" class="label" text-anchor="end">Capacitive v2.0</text>
+  <text x="80" y="676" class="label" text-anchor="end">(NOT resistive!)</text>
+  <text x="80" y="688" class="qty" text-anchor="end">qty: 1 + JST cable</text>
+  <line x1="82" y1="670" x2="290" y2="670" stroke="#CCC" stroke-width="0.5"/>
+
+  <line x1="300" y1="710" x2="300" y2="730" stroke="#BBB" stroke-width="1" stroke-dasharray="3,3"/>
+  <polygon points="295,730 305,730 300,737" fill="#BBB"/>
+
+  <!-- === 8. GROUND STAKES === -->
+  <g transform="translate(300, 780)">
+    <!-- Three stakes -->
+    <g transform="translate(-60, 0)">
+      <rect x="-3" y="-25" width="6" height="50" rx="2" fill="#9E9E9E" stroke="#757575" stroke-width="0.5"/>
+      <polygon points="-3,25 3,25 0,35" fill="#757575"/>
+    </g>
+    <g transform="translate(0, 0)">
+      <rect x="-3" y="-25" width="6" height="50" rx="2" fill="#9E9E9E" stroke="#757575" stroke-width="0.5"/>
+      <polygon points="-3,25 3,25 0,35" fill="#757575"/>
+    </g>
+    <g transform="translate(60, 0)">
+      <rect x="-3" y="-25" width="6" height="50" rx="2" fill="#9E9E9E" stroke="#757575" stroke-width="0.5"/>
+      <polygon points="-3,25 3,25 0,35" fill="#757575"/>
+    </g>
+  </g>
+  <text x="420" y="770" class="part-label">Ground Stakes</text>
+  <text x="420" y="784" class="label">Printed or steel rebar</text>
+  <text x="420" y="796" class="label">200mm, tapered tip</text>
+  <text x="420" y="808" class="qty">qty: 3</text>
+  <line x1="362" y1="785" x2="418" y2="785" stroke="#CCC" stroke-width="0.5"/>
+
+  <!-- === FASTENERS NOTE === -->
+  <g transform="translate(300, 855)">
+    <rect x="-120" y="-12" width="240" height="24" rx="4" fill="#FFF3E0" stroke="#FFB74D" stroke-width="1"/>
+    <text x="0" y="4" text-anchor="middle" class="label" font-weight="bold" fill="#E65100">
+      All joints: M3 brass inserts + security Torx (T10) screws
+    </text>
+  </g>
+</svg>

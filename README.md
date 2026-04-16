@@ -6,6 +6,34 @@ A cheap (~$12), volunteer-built device that wraps around a sapling, monitors soi
 
 ---
 
+## How it looks
+
+<p align="center">
+  <img src="docs/images/perspective-view.svg" alt="TreeGuard 3/4 perspective view" width="550">
+</p>
+
+<details>
+<summary><strong>More views (front, side, top, exploded, LED states)</strong></summary>
+
+### Front view
+<img src="docs/images/front-view.svg" alt="TreeGuard front view with annotations" width="450">
+
+### Side view
+<img src="docs/images/side-view.svg" alt="TreeGuard side profile" width="450">
+
+### Top view (looking down)
+<img src="docs/images/top-view.svg" alt="TreeGuard top-down view showing triangular layout" width="450">
+
+### Exploded view (all components)
+<img src="docs/images/exploded-view.svg" alt="TreeGuard exploded component diagram" width="500">
+
+### LED states
+<img src="docs/images/led-states.svg" alt="Three LED states: thirsty (red), happy (green), sick (amber)" width="600">
+
+</details>
+
+---
+
 ## Why this exists
 
 Millions of saplings die in their first two summers because nobody waters them consistently. Irrigation is expensive. Volunteers forget. TreeGuard turns every passerby into a potential caretaker with a single visual signal.
