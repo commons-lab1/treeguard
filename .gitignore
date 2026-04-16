@@ -1,0 +1,32 @@
+# PlatformIO
+.pio/
+.vscode/
+lib/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+*.swp
+*.swo
+*~
+.idea/
+
+# Build artifacts
+*.elf
+*.bin
+*.hex
+*.map
+
+# KiCad backups
+*-backups/
+*.kicad_pcb-bak
+*.sch-bak
+_autosave-*
+
+# STL exports (keep in releases, not in repo)
+# mechanical/**/*.stl
+
+# Environment / secrets
+.env

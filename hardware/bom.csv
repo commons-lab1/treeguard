@@ -1,0 +1,16 @@
+part,description,quantity,unit_cost_usd,source,notes
+ESP32-C3 Super Mini,MCU with BLE/WiFi,1,1.80,AliExpress/LCSC,"Connected version; substitute ATtiny1614 ($0.80) for offline MVP"
+Capacitive Soil Moisture Sensor v2.0,Soil humidity reading,1,1.20,AliExpress,"MUST be capacitive not resistive - resistive corrodes in weeks"
+Solar Panel 5V 0.5-1W,Energy harvesting,1,1.50,AliExpress,"Epoxy encapsulated not PET laminated"
+TP4056 + Protection (HW-107),LiPo charge controller,1,0.40,AliExpress/LCSC,
+18650 Li-ion Cell,Energy storage,1,0.50-3.00,Reused from laptop packs,"Partner with e-waste groups; test capacity before use"
+WS2812B LED or 5mm Diffused Red+Green,Visual signaling,2,0.15,AliExpress,"Diffused lens preferred for wide viewing angle"
+DS18B20,Temperature sensor (optional),1,0.50,AliExpress,"For freeze alert in V1; skip in MVP"
+JST PH 2.0 Connectors,Modular wiring,3,0.10,AliExpress,"Battery + sensor + solar connections"
+M3x5 Brass Heat-Set Inserts,Frame fasteners,8,0.05,AliExpress,
+M3x8 Security Torx Screws,Tamper-resistant fasteners,8,0.03,AliExpress,"T10 security Torx"
+Silicone Sealant,Enclosure gasket,1,0.30,Local hardware,"Clear RTV; bead in gasket groove"
+22AWG Silicone Wire (Red/Black/Yellow),Wiring,0.5m each,0.20,AliExpress,"Silicone insulation for outdoor UV resistance"
+PETG Filament (Recycled preferred),Frame + enclosure,250g,4.00,Refil/Reflow/local,"NOT PLA - PLA fails in UV and cold"
+Ground Stakes (printed or steel),Frame anchoring,3,0.30,Printed or hardware store,"Never attach frame to trunk"
+,,,,TOTAL ~$11-14,
