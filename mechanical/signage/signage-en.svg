@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 280" width="200" height="280">
+  <defs>
+    <style>
+      .title { font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-weight: bold; fill: #1a5c1a; }
+      .subtitle { font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; fill: #333; }
+      .body { font-family: Arial, Helvetica, sans-serif; font-size: 9px; fill: #444; }
+      .warning { font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; fill: #cc0000; }
+      .url { font-family: monospace; font-size: 7px; fill: #666; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="200" height="280" rx="8" fill="#f0f7e6" stroke="#3a7a3a" stroke-width="2"/>
+
+  <!-- Header -->
+  <text x="100" y="30" text-anchor="middle" class="title">TreeGuard</text>
+  <text x="100" y="46" text-anchor="middle" class="subtitle">This young tree needs your help!</text>
+
+  <!-- LED legend -->
+  <rect x="15" y="58" width="170" height="72" rx="4" fill="white" stroke="#ddd" stroke-width="1"/>
+
+  <!-- Red = thirsty -->
+  <circle cx="35" cy="74" r="8" fill="#ff3333" stroke="#cc0000" stroke-width="1"/>
+  <text x="52" y="72" class="body" font-weight="bold">Red blinking</text>
+  <text x="52" y="82" class="body">I'm thirsty! Please water me.</text>
+
+  <!-- Green = happy -->
+  <circle cx="35" cy="100" r="8" fill="#33cc33" stroke="#009900" stroke-width="1"/>
+  <text x="52" y="98" class="body" font-weight="bold">Green glow</text>
+  <text x="52" y="108" class="body">Just watered. Thank you!</text>
+
+  <!-- Amber = help -->
+  <circle cx="35" cy="126" r="8" fill="#ffaa00" stroke="#cc8800" stroke-width="1"/>
+  <text x="52" y="124" class="body" font-weight="bold">Amber blink</text>
+  <text x="52" y="134" class="body">I need maintenance help.</text>
+
+  <!-- Water instruction -->
+  <text x="100" y="158" text-anchor="middle" class="warning">PLAIN WATER ONLY</text>
+  <text x="100" y="172" text-anchor="middle" class="subtitle">~1 bottle (1L) maximum</text>
+  <text x="100" y="186" text-anchor="middle" class="body">Pour slowly at the base of the trunk.</text>
+  <text x="100" y="198" text-anchor="middle" class="body">No soda, juice, or other liquids.</text>
+
+  <!-- QR placeholder -->
+  <rect x="65" y="210" width="70" height="70" rx="4" fill="white" stroke="#999" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="100" y="250" text-anchor="middle" class="body" fill="#999">QR CODE</text>
+  <text x="100" y="262" text-anchor="middle" class="body" fill="#999">HERE</text>
+
+  <!-- Footer -->
+  <text x="100" y="274" text-anchor="middle" class="url">commons-lab/treeguard - open source</text>
+</svg>

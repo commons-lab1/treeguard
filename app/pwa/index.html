@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TreeGuard</title>
+    <meta name="description" content="Find and water thirsty trees near you.">
+    <meta name="theme-color" content="#1a5c1a">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        :root {
+            --green: #1a5c1a;
+            --green-light: #f0f7e6;
+            --red: #cc3333;
+            --amber: #cc8800;
+            --gray: #666;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: var(--green-light);
+            color: #333;
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+
+        header {
+            text-align: center;
+            padding: 24px 0;
+        }
+
+        header h1 {
+            color: var(--green);
+            font-size: 28px;
+        }
+
+        header p {
+            color: var(--gray);
+            margin-top: 4px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 12px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .card h2 {
+            font-size: 16px;
+            margin-bottom: 12px;
+            color: var(--green);
+        }
+
+        .tree-list {
+            list-style: none;
+        }
+
+        .tree-list li {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .tree-list li:last-child { border-bottom: none; }
+
+        .status-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .status-dot.thirsty { background: var(--red); }
+        .status-dot.happy { background: var(--green); }
+        .status-dot.sick { background: var(--amber); }
+
+        .tree-info { flex: 1; }
+        .tree-info .name { font-weight: 600; }
+        .tree-info .detail { font-size: 13px; color: var(--gray); }
+
+        .btn {
+            display: inline-block;
+            background: var(--green);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-size: 15px;
+            cursor: pointer;
+            text-align: center;
+            width: 100%;
+            margin-top: 8px;
+        }
+
+        .btn:active { opacity: 0.8; }
+
+        .scan-section { text-align: center; }
+
+        #scan-status {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+            text-align: center;
+        }
+
+        .stat-num {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--green);
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--gray);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>TreeGuard</h1>
+        <p>Help young trees survive</p>
+    </header>
+
+    <div class="card scan-section">
+        <h2>Find nearby trees</h2>
+        <button class="btn" id="scan-btn" onclick="startScan()">Scan for TreeGuard devices</button>
+        <p id="scan-status"></p>
+    </div>
+
+    <div class="card">
+        <h2>Nearby trees</h2>
+        <ul class="tree-list" id="tree-list">
+            <li>
+                <span class="status-dot thirsty"></span>
+                <div class="tree-info">
+                    <div class="name">Oak sapling #TG-003</div>
+                    <div class="detail">Thirsty — last watered 2 days ago</div>
+                </div>
+            </li>
+            <li>
+                <span class="status-dot happy"></span>
+                <div class="tree-info">
+                    <div class="name">Maple #TG-001</div>
+                    <div class="detail">Happy — watered 1 hour ago</div>
+                </div>
+            </li>
+            <li>
+                <span class="status-dot sick"></span>
+                <div class="tree-info">
+                    <div class="name">Cherry #TG-007</div>
+                    <div class="detail">Needs maintenance — low battery</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Your impact</h2>
+        <div class="stats">
+            <div>
+                <div class="stat-num" id="stat-watered">0</div>
+                <div class="stat-label">Trees watered</div>
+            </div>
+            <div>
+                <div class="stat-num" id="stat-streak">0</div>
+                <div class="stat-label">Day streak</div>
+            </div>
+            <div>
+                <div class="stat-num" id="stat-liters">0</div>
+                <div class="stat-label">Liters given</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // BLE scan for TreeGuard devices
+        // TreeGuard BLE service UUID (to be defined in firmware)
+        const TREEGUARD_SERVICE_UUID = '0000ff01-0000-1000-8000-00805f9b34fb';
+
+        async function startScan() {
+            const status = document.getElementById('scan-status');
+            const btn = document.getElementById('scan-btn');
+
+            if (!navigator.bluetooth) {
+                status.textContent = 'Bluetooth not available. Use the QR code on the frame instead.';
+                return;
+            }
+
+            btn.disabled = true;
+            status.textContent = 'Scanning...';
+
+            try {
+                const device = await navigator.bluetooth.requestDevice({
+                    filters: [{ services: [TREEGUARD_SERVICE_UUID] }],
+                    optionalServices: [TREEGUARD_SERVICE_UUID]
+                });
+
+                status.textContent = `Found: ${device.name || 'TreeGuard device'}`;
+                // TODO: connect, read state characteristic, update UI
+            } catch (err) {
+                if (err.name === 'NotFoundError') {
+                    status.textContent = 'No TreeGuard devices found nearby.';
+                } else {
+                    status.textContent = `Scan failed: ${err.message}`;
+                }
+            } finally {
+                btn.disabled = false;
+            }
+        }
+
+        // Load stats from localStorage
+        function loadStats() {
+            const stats = JSON.parse(localStorage.getItem('treeguard_stats') || '{"watered":0,"streak":0,"liters":0}');
+            document.getElementById('stat-watered').textContent = stats.watered;
+            document.getElementById('stat-streak').textContent = stats.streak;
+            document.getElementById('stat-liters').textContent = stats.liters;
+        }
+
+        loadStats();
+    </script>
+</body>
+</html>

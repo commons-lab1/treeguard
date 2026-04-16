@@ -1,0 +1,60 @@
+name: Build Firmware
+
+on:
+  push:
+    paths:
+      - 'firmware/**'
+  pull_request:
+    paths:
+      - 'firmware/**'
+
+jobs:
+  build-mini:
+    name: Build TreeGuard Mini (ATtiny1614)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install PlatformIO
+        run: pip install platformio
+
+      - name: Build firmware
+        run: |
+          cd firmware/treeguard-mini
+          pio run
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: treeguard-mini-firmware
+          path: firmware/treeguard-mini/.pio/build/attiny1614/*.hex
+
+  build-net:
+    name: Build TreeGuard Net (ESP32-C3)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install PlatformIO
+        run: pip install platformio
+
+      - name: Build firmware
+        run: |
+          cd firmware/treeguard-net
+          pio run
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: treeguard-net-firmware
+          path: firmware/treeguard-net/.pio/build/esp32c3/*.bin
