@@ -1,0 +1,19 @@
+# CODEOWNERS — maps directories to review teams
+# See: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default: maintainers review everything
+* @commons-lab1/maintainers
+
+# Hardware (PCB, wiring, BOM, sensors)
+/hardware/ @commons-lab1/hardware-reviewers
+/mechanical/ @commons-lab1/hardware-reviewers
+
+# Firmware
+/firmware/ @commons-lab1/firmware-reviewers
+
+# Documentation
+/docs/ @commons-lab1/docs-team
+
+# Field data
+/data/ @commons-lab1/field-testers
+
